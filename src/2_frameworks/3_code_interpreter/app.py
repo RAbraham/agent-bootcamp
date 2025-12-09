@@ -98,6 +98,7 @@ demo = gr.ChatInterface(
         "What is the unique number of client_id in the cleaned_sample_dataset.csv?",
         "What is the unique number of card_id in the cleaned_sample_dataset.csv?",
         "Which client_id spent the most amount in the cleaned_sample_dataset.csv?",
+        "What is the average amount spent per transaction in the cleaned_sample_dataset.csv?",
     ],
 )
 
