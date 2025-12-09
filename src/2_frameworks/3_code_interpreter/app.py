@@ -47,7 +47,8 @@ async_openai_client = AsyncOpenAI()
 code_interpreter = CodeInterpreter(
     local_files=[
         Path("sandbox_content/"),
-        Path("tests/tool_tests/example_files/example_a.csv"),
+        # Path("tests/tool_tests/example_files/example_a.csv"),
+        Path("tests/tool_tests/example_files/cleaned_sample_dataset.csv"),
     ]
 )
 
@@ -88,10 +89,15 @@ demo = gr.ChatInterface(
     _main,
     title="2.1 OAI Agent SDK ReAct + LangFuse Code Interpreter",
     type="messages",
+    #examples=[
+    #    "What is the sum of the column `x` in this example_a.csv?",
+    #    "What is the sum of the column `y` in this example_a.csv?",
+    #    "Create a linear best-fit line for the data in example_a.csv.",
+    #],
     examples=[
-        "What is the sum of the column `x` in this example_a.csv?",
-        "What is the sum of the column `y` in this example_a.csv?",
-        "Create a linear best-fit line for the data in example_a.csv.",
+        "What is the unique number of client_id in the cleaned_sample_dataset.csv?",
+        "What is the unique number of card_id in the cleaned_sample_dataset.csv?",
+        "Which client_id spent the most amount in the cleaned_sample_dataset.csv?",
     ],
 )
 
